@@ -21,12 +21,12 @@ public class LoginFacebookController extends HttpServlet {
 		super();
 	}
 	// Kiểm tra tài khoản có tồn tại không
-		// 2 Hệ thống gửi yêu cầu xác thực với Facebook
-				// 3 Hệ thống hiện form yêu cầu đăng nhập tài khoản
-				// 4 Người dùng đăng nhập.
-				// 5 Hệ thống chứng thực Facebook yêu cầu xác nhận các quyền truy cập thông tin tài khoản.
-				// 6 Người dùng cấp quyền cho ứng dụng cá nhân đó.
-				// 7 Gửi tham số "code" xác thực và nhận code
+		// 2  Gửi yêu cầu truy cập Facebook
+                // 3 Hệ thống hiện form yêu cầu đăng nhập tài khoản
+		// 4. Đăng nhập tài khoản Facebook
+		// 5 Hệ thống chứng thực Facebook yêu cầu xác nhận các quyền truy cập thông tin tài khoản.
+		// 6 Người dùng cấp quyền cho ứng dụng cá nhân đó.
+		// 7 Gửi tham số "code" xác thực và nhận code
 
 				
 	protected void doGet(HttpServletRequest request, HttpServletResponse response)
@@ -42,7 +42,8 @@ public class LoginFacebookController extends HttpServlet {
 		} else {
 			//8. Yêu cầu truy cập để lấy thông tin tài khoản từ "code" xác thực.
 			String accessToken = RestFB.getToken(code);
-			// 10 lấy thông tin tài khoản Facebook thông qua accesssToken
+			
+			// 10. Yêu cầu thông tin tài khoản Facebook từ chuỗi truy cập thông qua accesssToken
 			User user = RestFB.getUserInfo(accessToken);
 			//13. Lấy ra id, name
 			request.setAttribute("id", user.getId());
