@@ -22,11 +22,11 @@ public class LoginFacebookController extends HttpServlet {
 	}
 	// Kiểm tra tài khoản có tồn tại không
 		// 2 Hệ thống gửi yêu cầu xác thực với Facebook
-				// 3 Hệ thống hiện form yêu cầu đăng nhập tài khoản
-				// 4 Người dùng đăng nhập.
-				// 5 Hệ thống chứng thực Facebook yêu cầu xác nhận các quyền truy cập thông tin tài khoản.
-				// 6 Người dùng cấp quyền cho ứng dụng cá nhân đó.
-				// 7 Gửi tham số "code" xác thực và nhận code
+			// 3 Hệ thống hiện form yêu cầu đăng nhập tài khoản
+			// 4 Người dùng đăng nhập tài khoản Facebook.
+			// 5 Hệ thống chứng thực Facebook yêu cầu xác nhận các quyền truy cập thông tin tài khoản.
+			// 6 Người dùng cấp quyền cho ứng dụng cá nhân đó.
+			// 7. Gửi tham số "code" xác thực và nhận " code"
 
 				
 	protected void doGet(HttpServletRequest request, HttpServletResponse response)
